@@ -9,13 +9,7 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 
 public class LoginDataProvider {
-	 
-	/*
-	 * public Object[][] getLoginData() { return new Object[][]{
-	 * {"diana@example.com", "pass1234"}, {"clark@example.com", "password"},
-	 * {"ororo@example.com", "pa55w0rd!"}, {"miles@example.com", "pass-pass"} };
-	 }*/
-     
+
      @DataProvider(name = "loginData")
 	 public Object[][] getDataFromCSV() throws IOException {
 	        String path = "src/test/resources/testdata/loginData.csv";
