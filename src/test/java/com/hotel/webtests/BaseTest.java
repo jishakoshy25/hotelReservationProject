@@ -27,7 +27,7 @@ import com.hotel.util.DriverSetUp;
  * instantiated in the individual test classes again.
  */
 
-public abstract class BaseTest {
+public abstract class BaseTest{
 	protected WebDriver driver;
 	protected LoginPage loginPage;
 	protected NavigationBar navigationBar;
@@ -70,6 +70,10 @@ public abstract class BaseTest {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public WebDriver getDriver() {
+		return driver;
 	}
 	
 	/**
