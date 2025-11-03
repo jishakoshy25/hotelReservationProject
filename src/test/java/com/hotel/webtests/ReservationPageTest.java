@@ -15,7 +15,7 @@ public class ReservationPageTest extends BaseTest {
 	@Test
 	public void testReserveWithOffers() throws InterruptedException {
 		driver.get(URLs.PLAN_WITHOFFERS_URL);
-		reservationPage.enterCheckinDate("10/30/2025");
+		reservationPage.enterCheckinDate("11/30/2025");
 		reservationPage.selectStay(1);
 		reservationPage.selectGuestCount(2);
 		reservationPage.selectBreakfast(true);
@@ -33,7 +33,7 @@ public class ReservationPageTest extends BaseTest {
 	@Test
 	public void testStayWithoutMeals() throws InterruptedException {
 		driver.get(URLs.PLAN_STAYWITHOUTMEALS_URL);
-		reservationPage.enterCheckinDate("10/30/2025");
+		reservationPage.enterCheckinDate("11/30/2025");
 		reservationPage.selectStay(1);
 		reservationPage.selectGuestCount(2);
 		reservationPage.selectEarlyCheckIn(true);

@@ -10,6 +10,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
 import com.hotel.pages.ConfirmReservationPage;
 import com.hotel.pages.HomePage;
 import com.hotel.pages.LoginPage;
@@ -37,14 +39,17 @@ public abstract class BaseTest{
 	protected ReservationPlansPage reservePage;
 	protected ConfirmReservationPage confirmPage;
 	protected SignUpPage signUpPage;
+	protected DriverSetUp driverSetUp;
 	
 	/**
 	 * Set Up method that initializes all the Page classes and the webdriver instance
 	 */
-
-	@BeforeClass
-	public void setUp() {
-		driver = DriverSetUp.getDriver();
+	@Parameters({"browser"})
+	@BeforeClass(alwaysRun = true)
+	public void setUp(String browser) {
+		driverSetUp = new DriverSetUp();
+		driverSetUp.initDriver(browser);
+		driver = driverSetUp.getDriver();
 		loginPage = new LoginPage(driver);
 		navigationBar = new NavigationBar(driver);
 		homepage = new HomePage(driver);
@@ -80,7 +85,7 @@ public abstract class BaseTest{
 	 * Tear Down method that quits the driver session.
 	 */
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		driver.quit();
 	}

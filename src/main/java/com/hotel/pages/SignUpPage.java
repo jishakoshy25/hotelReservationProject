@@ -1,9 +1,14 @@
 package com.hotel.pages;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUpPage extends BasePage {
 
@@ -63,6 +68,8 @@ public class SignUpPage extends BasePage {
 
 	public void fillSignUpForm(String email, String password, String confirmPassword, String name, boolean isPremium,
 			String address, String telephone, String gender, String dateOfBirth, boolean notification) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(4000));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
 		this.email.sendKeys(email);
 		this.password.sendKeys(password);
 		this.confirmPassword.sendKeys(confirmPassword);
