@@ -6,3 +6,5 @@
 *.class
 /test-output
 *.html
+*.png
+.gitignore
