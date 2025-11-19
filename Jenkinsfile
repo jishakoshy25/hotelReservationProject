@@ -26,7 +26,7 @@ pipeline {
 
                 // For Windows + Maven use:
 
-                //bat 'mvn clean test'
+                bat 'mvn clean test'
 
             }
 
