@@ -1,4 +1,4 @@
-**hotelReservation** is a complete End-To-End project that demonstrates automated browser testing on a comprehensive hotel website using following technologies:
+**HotelReservation** is a complete End-To-End project that demonstrates automated browser testing on a comprehensive hotel website using following technologies:
 - Selenium WebDriver for browser automation
 - TestNG as the testing framework
 - Page Object Model (POM) for maintainable test architecture
